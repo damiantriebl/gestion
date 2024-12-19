@@ -7,7 +7,8 @@ import { saltAndHashPassword } from "@/utils/password"
 import { getUserFromDb } from "@/data/getUserFromDb"
 import { PrismaAdapter } from "@auth/prisma-adapter"
 import { prisma } from "@/prisma"
-export const { handlers, auth } = NextAuth({
+
+export const { handlers, signIn, signOut, auth } = NextAuth({
     adapter: PrismaAdapter(prisma),
 
   providers: [
